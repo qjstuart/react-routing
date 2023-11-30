@@ -10,11 +10,11 @@ const ErrorPage = () => {
   let message = "Something went wrong - default message.";
 
   if (error.status === 500) {
-    message = JSON.parse(error.data).message;
+    message = error.data.message;
   }
 
   if (error.status === 404) {
-    message = "404 - Could not find page or resource."
+    message = "404 - Could not find page or resource.";
   }
 
   return (
